@@ -1,0 +1,12 @@
+<div ng-repeat="lesson in lessons">
+		  <div class="selected_lesson">
+		  	 
+		  	 <p>{{ $index +1 }}.<img id="rightImg" height="120" width="150" ng-src={{lesson.image}}></p>      
+			  	<div id="rightDetail"><a href="#">{{ lesson.title || 'empty' }}
+			  	</a>
+			  	<a ng-click="deleteWish(lesson)"><p class="glyphicon glyphicon-remove"></p></a></div>
+
+
+		  	</p> 
+           </div>
+</div>

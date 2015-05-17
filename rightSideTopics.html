@@ -1,0 +1,5 @@
+<div ng-repeat="topic in topics">
+            <p>{{topic.name}}</p>
+            <div ng-include="'rightSideLessons.html'" ng-init="lessons = topic.lessons;"></div>
+
+ </div>

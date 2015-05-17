@@ -1,0 +1,78 @@
+ul li{
+	text-decoration: none;
+	display: inline;
+	padding-left: 4px;
+	
+}
+ul{
+	position: relative;
+	left:0px;
+	padding: 0px;
+}
+#courseimg{
+	position: absolute;
+
+
+}
+.detail{
+	position: relative;
+	display: inline-block;
+	padding-left: 250px;
+	padding-bottom: 35px;
+}
+.leftSide{
+	border-bottom:groove #000;
+	width: 45%;
+	padding: 20px;
+
+}
+#select{
+	padding-left: 40px;
+	border-bottom:groove #000;
+	width: 20%;
+	padding: 5px;
+	margin: 10px;
+
+}
+.main{
+	position: relative;
+}
+.rightSide{
+	position: absolute;
+	left: 580px;
+border-left: 1px solid #000;
+	height: 102%;
+	bottom: 0px;
+	background-color: rgba(0, 0, 0, 0.26);
+	width: 55%;
+}
+select{
+	position: relative;
+	bottom: 7px;
+}
+h5{
+	
+
+	border-bottom:groove #000;
+	width: 100%;
+	padding: 11px;
+	margin: 1px;
+}
+.selected_lesson{
+	margin: 40px;
+}
+#rightImg{
+	position: relative;
+	left:10px;
+}
+#rightDetail{
+	position: relative;
+	left:200px;
+	bottom: 100px;
+
+}
+.glyphicon-remove{
+	padding-left: 200px;
+	vertical-align: right;
+}
+

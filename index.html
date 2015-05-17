@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en-US">
+    <head>
+    <title>Learning Course</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="angular-xeditable-0.1.8/css/xeditable.css">
+    
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+    <link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.no-icons.min.css" rel="stylesheet">
+<link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet">
+<script type="text/javascript">
+//     function allowDrop(ev) {
+//     ev.preventDefault();
+// }
+
+// function drag(ev) {
+//     ev.dataTransfer.setData("text", ev.target.id);
+// }
+
+// function drop(ev) {
+//     ev.preventDefault();
+//     var data = ev.dataTransfer.getData("text");
+//     ev.target.appendChild(document.getElementById(data));
+// }
+</script>
+    </head>
+    <body  ng-app="learn" ng-controller="LearnCourse"> 
+        <div class="main">
+    <!-- Left hand side of the image -->
+       
+                
+            <div style="border-bottom: 3px groove; width: 45%; margin-top: 20px; padding-left: 30px;" class="select">
+                <select ng-options="lesson.subject as lesson.subject for lesson in allLessons"  ng-model="selectedSubject" ng-change="update()">
+                    <option value=''>Subject</option>
+                </select> &nbsp &nbsp&nbsp &nbsp&nbsp &nbsp
+                <select ng-options="lesson.grade as lesson.grade for lesson in allLessons"  ng-model="selectedGrade" ng-change="update()">
+                    <option value=''>Grade</option>
+                </select>
+            </div>
+          
+            <div class="leftSide" class="list-group-item" ng-repeat="lesson in lessons" draggable="true" ondragstart="drag(event)">
+                <div class="courseImage"><img id="courseimg" height="150" width="200" ng-src={{lesson.image}}></div>
+                <div class="detail">
+                <h3>{{lesson.title}} </h3>
+                <p>{{lesson.subject}}, Grade {{lesson.grade}}</p>
+                <ul>
+                    <li ng-show="lesson.noOfVideos!=0">{{lesson.noOfVideos}}&nbsp <span class="glyphicon glyphicon-facetime-video"></span></li>
+                    <li ng-show="lesson.noOfDocuments!=0">{{lesson.noOfDocuments}}&nbsp  <span class="glyphicon glyphicon-file"></span></li>
+                    <li ng-show="lesson.noOfQuestions!=0">{{lesson.noOfQuestions}}&nbsp  <span class="glyphicon glyphicon-question-sign"></span></li>
+                </ul> 
+                </div>
+
+            </div>
+    <!-- Right hand side of the image -->
+            <div class="rightSide">
+            <p><h5>Create a New Course</h5></p>
+            <div ng-controller="LearnCourse">
+            <a href="#" editable-text="course.name">{{ course.name || 'empty' }}</a>
+            <p><h5>Topics</h5> </p>
+            <div ng-include="'rightSideTopics.html'" ng-init="topics = course.topics;"></div>
+           <!--  <div class="rightSide" ng-repeat="topic in course.topics">
+            <p>{{topic.name}}</p>
+
+
+                <a href="#" editable-text="topic.name">{{ topic.name || 'empty' }}</a>
+                <div class="rightSide" class="list-group-item" ng-repeat="lesson in topic.lessons">
+                 <h6>{{lesson.title}} </h6>
+
+                </div>
+
+            </div> -->
+            </div>              
+            </div>
+
+          
+
+        <script src= "http://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+        <script src="ngdraggable/ngDraggable.js"></script>
+        
+          <script type="text/javascript" src="angular-xeditable-0.1.8/js/xeditable.js"></script>
+          <script type="text/javascript" src="angular-drag-and-drop-lists.js"></script>
+
+        <script type="text/javascript" src="app.js"></script>
+        <script type="text/javascript" src="maincontroller.js"></script>
+    </body>
+</html>
