@@ -1,0 +1,121 @@
+ul li{
+	text-decoration: none;
+	display: inline;
+	padding-left: 4px;
+	
+}
+ul{
+	position: relative;
+	left:0px;
+	padding: 0px;
+}
+#courseimg{
+	position: absolute;
+
+
+}
+.detail{
+	position: relative;
+	display: inline-block;
+	padding-left: 250px;
+	padding-bottom: 35px;
+}
+.leftSide{
+	position: relative;
+	border-bottom:groove #000;
+	width: 45%;
+	padding: 20px;
+	
+
+}
+#select{
+	padding-left: 40px;
+	border-bottom:groove #000;
+	width: 20%;
+	padding: 5px;
+	margin: 10px;
+
+}
+.main{
+	position: relative;
+}
+.rightSide{
+	position: absolute;
+	left: 580px;
+border-left: 1px solid #000;
+	height: auto;
+	top: 0px;
+	background:none repeat scroll 0% 0% rgba(0, 0, 0, 0.26);
+	width: 55%;
+}
+select{
+	position: relative;
+	bottom: 7px;
+}
+
+h5{
+	
+	position: relative;
+	bottom: 10px;
+	border-bottom:groove #000;
+	width: 100%;
+	padding: 11px;
+	margin: 1px;
+
+}
+#create{
+
+
+}
+.selected_lesson{
+	border-bottom:groove #000;
+	margin: 40px;
+}
+#rightImg{
+	position: relative;
+	left:10px;
+}
+#rightDetail{
+	position: relative;
+	left:195px;
+	bottom: 100px;
+
+}
+.glyphicon-remove{
+	padding-left: 160px;
+	
+}
+
+[ng-drop]{
+        background:none repeat scroll 0% 0% rgba(79, 82, 119, 0.11);
+        text-align: left;
+        border:3px dashed #000;
+        width: 600px;
+        min-height: 100px;
+        /*padding-left: 190px;
+        padding-top: 40px;*/
+
+        display: block;
+        margin:20px auto;
+        position: relative;
+    }
+#courseName{
+	width: 55%;
+	border: none;
+	font-size: 19px;
+}
+#topic{
+	position: relative;
+	bottom: 12px;
+	background-color:rgba(0, 0, 0, 0.52);
+	color: white;
+	height: 40px;
+	padding: 5px 5px 5px 20px;
+    font-size: 18px;
+}
+#proficiency select{
+	padding: 2px;
+margin-left: 30px;
+display: inline;
+
+}
