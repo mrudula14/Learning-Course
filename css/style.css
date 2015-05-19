@@ -23,30 +23,29 @@ ul{
 .leftSide{
 	position: relative;
 	border-bottom:groove #000;
-	width: 45%;
+	
 	padding: 20px;
 	
 
 }
-#select{
+.select{
 	padding-left: 40px;
 	border-bottom:groove #000;
-	width: 20%;
+	
 	padding: 5px;
-	margin: 10px;
+	margin: 1px;
 
 }
 .main{
 	position: relative;
 }
 .rightSide{
-	position: absolute;
-	left: 580px;
+	
 border-left: 1px solid #000;
 	height: auto;
 	top: 0px;
 	background:none repeat scroll 0% 0% rgba(0, 0, 0, 0.26);
-	width: 55%;
+	
 }
 select{
 	position: relative;
@@ -90,13 +89,13 @@ h5{
         background:none repeat scroll 0% 0% rgba(79, 82, 119, 0.11);
         text-align: left;
         border:3px dashed #000;
-        width: 600px;
+      
         min-height: 100px;
         /*padding-left: 190px;
         padding-top: 40px;*/
 
         display: block;
-        margin:20px auto;
+        margin:3%;
         position: relative;
     }
 #courseName{
@@ -115,7 +114,22 @@ h5{
 }
 #proficiency select{
 	padding: 2px;
-margin-left: 30px;
-display: inline;
+    margin-left: 30px;
+    display: inline;
+
+}
+@media (min-width: 768px) and (max-width: 991px)  { 
+	.select{
+		
+		position: absolute;
+		bottom: 0px;
+		display: inline;
+		
+     
+ 		}	
+    .rightSide{
+    	position: relative;
+    	left: 0px;
+    }
 
 }

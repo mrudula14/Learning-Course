@@ -37,10 +37,11 @@
     </head>
     <body  ng-app="learn" ng-controller="LearnCourse"> 
         <div class="main">
+        <div class="row">
     <!-- Left hand side of the image -->
        
-                
-            <div style="border-bottom: 3px groove; width: 45%; margin-top: 20px; padding-left: 30px;" class="select">
+        <div class="col-lg-6 col-md-6">
+            <div style="border-bottom: 3px groove; margin-top: 20px; padding-left: 30px;" class="select">
                 <!-- <select ng-options="lesson.subject as lesson.subject for lesson in allLessons "  ng-model="selectedSubject" ng-change="update()"> -->
                 <select ng-options="lesson.subject as lesson.subject for lesson in allLessons | unique:'subject' "  ng-model="selectedSubject" ng-change="update()">
                     <option value=''>Subject</option>
@@ -63,8 +64,11 @@
                 </div>
 
             </div>
+        </div>
             <!-- left side ends here -->
+
     <!-- Right hand side of the image -->
+    <div class="col-lg-6 col-md-6">
             <div class="rightSide">
             <p id="create"><h5>Create a New Course</h5></p>
             <div ng-controller="LearnCourse">
@@ -75,9 +79,10 @@
           
             </div>              
             </div>
-
+      </div>
           <!-- Right Side ends here -->
-
+</div>
+</div>
         <script src= "http://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular.min.js"></script>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
         <script src="ngdraggable/ngDraggable.js"></script>
