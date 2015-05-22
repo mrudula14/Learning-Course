@@ -1,58 +1,5 @@
 var app= angular.module('maincontroller',[]);
 app.controller('LearnCourse', function ($scope) {
-	$scope.allLessons=
-		[
-			{
-				id : 1, 
-				image: "course_image.jpg",
-				title : "Lorem Ipsum", 
-				subject : "Math", 
-				grade : 2, 
-				noOfVideos : 1, 
-				noOfDocuments : 1,
-				noOfQuestions : 2
-			},
-			{   
-				id : 2, 
-				image: "course_image.jpg",
-				title : "Advanced LoremIpsum", 
-				subject : "Math", 
-				grade : 2, 
-				noOfVideos : 1,
-				noOfDocuments : 0, 
-				noOfQuestions : 1
-			},
-			{ 
-				id : 3, 
-				image: "course_image.jpg",
-				title : "Lorem Ipsum", 
-				subject : "English", 
-				grade : 1, 
-				noOfVideos : 0, 
-				noOfDocuments : 1,
-				noOfQuestions : 1
-			},
-			{ 
-				id : 4, 
-				image: "course_image.jpg",
-				title : "Lorem Ipsum", 
-				subject : "Science", 
-				grade : 1, 
-				noOfVideos : 1, 
-				noOfDocuments : 1,
-				noOfQuestions : 2
-			},
-			{ 
-				id : 5, 
-				image: "course_image.jpg",
-				title : "Lorem Ipsum", 
-				subject : "Computers", 
-				grade : 2, 
-				noOfVideos : 1, 
-				noOfDocuments :1, 
-				noOfQuestions : 1
-			}
-		];
 	$scope.course={
 				name:"Algebra",
 				topics:
@@ -90,21 +37,87 @@ app.controller('LearnCourse', function ($scope) {
 	 
 					]
 			};
- 	$scope.proficiency=["easy","medium","hard"];
-		
-	$scope.lessons=$scope.allLessons;
-
+	$scope.getProficiencyList = function(){
+		return ["easy","medium","hard"];
+	}
+	$scope.getSubjects = function(){
+		return ["Math","English","Computers"];
+	}
+	$scope.getGrades = function(){
+		return [1,2];
+	}	
+	$scope.getLessons=function(){
+		serverResponse=[
+			{
+				id : 1, 
+				image: "course_image.jpg",
+				title : "Lorem Ipsum", 
+				subject : "Math", 
+				grade : 2, 
+				noOfVideos : 1, 
+				noOfDocuments : 1,
+				noOfQuestions : 2
+			},
+			{   
+				id : 2, 
+				image: "course_image.jpg",
+				title : "Adv LoremIpsum", 
+				subject : "Math", 
+				grade : 1, 
+				noOfVideos : 1,
+				noOfDocuments : 0, 
+				noOfQuestions : 1
+			},
+			{ 
+				id : 3, 
+				image: "course_image.jpg",
+				title : "Lorem Ipsum", 
+				subject : "English", 
+				grade : 2, 
+				noOfVideos : 0, 
+				noOfDocuments : 1,
+				noOfQuestions : 1
+			},
+			{ 
+				id : 4, 
+				image: "course_image.jpg",
+				title : "Lorem Ipsum", 
+				subject : "Science", 
+				grade : 1, 
+				noOfVideos : 1, 
+				noOfDocuments : 1,
+				noOfQuestions : 2
+			},
+			{ 
+				id : 5, 
+				image: "course_image.jpg",
+				title : "Lorem Ipsum", 
+				subject : "Computers", 
+				grade : 2, 
+				noOfVideos : 1, 
+				noOfDocuments :1, 
+				noOfQuestions : 1
+			}
+		];
+		return serverResponse;
+	}
+ 	
+ 	$scope.subjects=$scope.getSubjects();
+ 	$scope.proficiency=$scope.getProficiencyList();
+	$scope.grades=$scope.getGrades();
+	$scope.lessons=$scope.getLessons();
 
 	$scope.update=function() {
 		var lessonList=[];
 		var index;
+		allLessons=$scope.getLessons();
 		if ( $scope.selectedSubject == undefined && $scope.selectedGrade == undefined ){
-			$scope.lessons=$scope.allLessons;
+			$scope.lessons=allLessons;
 			return;
 		}
 
-		for( index in $scope.allLessons){
-			lesson = $scope.allLessons[index];
+		for( index in allLessons){
+			lesson = allLessons[index];
 			if(  $scope.selectedSubject === lesson.subject && $scope.selectedGrade === lesson.grade){
 				
 				lessonList.push(lesson);
@@ -120,7 +133,7 @@ app.controller('LearnCourse', function ($scope) {
 		}
 		
 		$scope.lessons=lessonList;
-		// body...
+		
 	}
 	
   
